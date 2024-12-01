@@ -22,20 +22,16 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v4
 
-      # Step 2: Set up CMake
-      - name: Set up CMake
-        uses: lukka/setup-cmake@v3
-
-      # Step 3: Install dependencies
+      # Step 2: Install dependencies
       - name: Install Dependencies
         run: |
           sudo apt-get update
           sudo apt-get install -y build-essential ninja-build libgtest-dev
 
-      # Step 4: Configure the build
+      # Step 3: Configure the build
       - name: Configure Build for Year ${{ matrix.year }}
         run: |
-          cmake -S . -B build -DYEAR_TO_BUILD_MODE=${{ matrix.year }} -DDAY_TO_BUILD_MODE=all -DBUILD_TESTS_MODE=ON -G Ninja
+          cmake -S . -B build -DYEAR_TO_BUILD_MODE=${{ matrix.year }} -DDAY_TO_BUILD_MODE=all -DBUILD_TESTS_MODE=ON
 
       # Step 5: Build the project
       - name: Build Project for Year ${{ matrix.year }}
