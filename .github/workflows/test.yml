@@ -43,4 +43,4 @@ jobs:
 
       # Step 6: Run tests
       - name: Run Tests for Year ${{ matrix.year }}
-        run: for test in ./AoC_${{ matrix.year }}_day[0-2][0-9]_Tests; do $test; done
+        run: for test in ./build/AoC_${{ matrix.year }}_day[0-2][0-9]_Tests; do $test; done
