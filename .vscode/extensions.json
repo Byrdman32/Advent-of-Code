@@ -1,0 +1,15 @@
+{
+    "recommendations": [
+        "ms-vscode.cpptools",
+        "twxs.cmake",
+        "ms-vscode.cmake-tools",
+        "ms-vscode.cpptools-extension-pack",
+        "ZainChen.json",
+        "redhat.vscode-yaml",
+        "jbockle.jbockle-format-files",
+        "codezombiech.gitignore",
+        "jacprosser.discord-rpc",
+        "miguelsolorio.symbols",
+        "markxoe.advent-of-code"
+    ]
+}
