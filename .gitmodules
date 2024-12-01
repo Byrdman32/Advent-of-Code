@@ -1,0 +1,3 @@
+[submodule "data"]
+	path = data
+	url = https://github.com/Byrdman32/Advent-of-Code-Inputs.git
