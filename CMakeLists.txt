@@ -21,10 +21,10 @@ set(BUILD_TESTS_MODE ON CACHE STRING "Enable Tests Mode")
 set(ENABLE_VERBOSE_TESTS OFF CACHE STRING "Enable verbose output for tests")
 
 ## Year of Event to Build
-set(YEAR_TO_BUILD_MODE 2024 CACHE STRING "Year of Event to Build")
+set(YEAR_TO_BUILD_MODE "2024" CACHE STRING "Year of Event to Build")
 
 ## Day of Event to Build (or "all" to build all)
-set(DAY_TO_BUILD_MODE 01 CACHE STRING "Day of Event to Build (or 'all' to build all)")
+set(DAY_TO_BUILD_MODE "01" CACHE STRING "Day of Event to Build (or 'all' to build all)")
 
 ####################################################################################################################
 ##                                         Configuration Based on Options                                         ##

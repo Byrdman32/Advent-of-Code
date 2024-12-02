@@ -4,7 +4,7 @@
 int main() {
     try {
         // Create an instance of Day## with input from a file
-        Day## day##("$$$$-##.txt");
+        Day## day##("&&&&-##.txt");
 
         // Run and time the solutions
         day##.RunAllParts();
