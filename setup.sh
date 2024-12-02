@@ -6,6 +6,7 @@ TEMPLATE_MAIN=".template/main.cpp"
 SRC_PATH="src"
 DATA_PATH="data"
 CMAKE_FILE="CMakeLists.txt"
+BUILD_DIR="build"
 
 # Functions
 create_year() {
@@ -138,16 +139,19 @@ create_day() {
   fi
 }
 
+delete_build() {
+  if [[ -d "${BUILD_DIR}" ]]; then
+    echo "Deleting build directory..."
+    rm -rf "${BUILD_DIR}"
+    echo "Build directory deleted."
+  else
+    echo "Build directory does not exist. Skipping deletion."
+  fi
+}
+
 # Main script
 if [[ $# -lt 1 ]]; then
-  echo "Usage: $0 --year <year> [--day <day>] [--set-year] [--set-day]"
-  exit 1
-fi
-
-# Parse arguments
-YEAR=""# Main script
-if [[ $# -lt 1 ]]; then
-  echo "Usage: $0 --year <year> [--day <day>] [--set-year] [--set-day]"
+  echo "Usage: $0 --year <year> [--day <day>] [--set-year] [--set-day] [--delete-build]"
   exit 1
 fi
 
@@ -156,6 +160,7 @@ YEAR=""
 DAY=""
 SET_YEAR="false"
 SET_DAY="false"
+DELETE_BUILD="false"
 
 while [[ $# -gt 0 ]]; do
   case $1 in
@@ -173,6 +178,10 @@ while [[ $# -gt 0 ]]; do
       ;;
     --set-day)
       SET_DAY="true"
+      shift 1
+      ;;
+    --delete-build)
+      DELETE_BUILD="true"
       shift 1
       ;;
     *)
@@ -196,6 +205,11 @@ fi
 if [[ -z "${DAY}" && "$SET_DAY" == "true" ]]; then
   echo "Error: --set-day requires a valid day to be specified."
   exit 1
+fi
+
+# Delete the build directory if the flag is set
+if [[ "$DELETE_BUILD" == "true" ]]; then
+  delete_build
 fi
 
 # Create year structure only if it doesn't exist
