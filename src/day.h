@@ -47,6 +47,9 @@ protected:
     // Utility function to read and load the input file
     void LoadInput(const std::string& filePath);
 
+    // Utility function to split a string into words
+    std::vector<std::string> SplitString(const std::string& input, const char delimiter = ' ');
+
     // Hook for derived classes to initialize additional resources
     virtual void Initialize();
 

@@ -28,6 +28,20 @@ void Day::LoadInput(const std::string& filePath) {
     }
 }
 
+// Split a string into words
+std::vector<std::string> Day::SplitString(const std::string& input, const char delimiter) {
+    std::vector<std::string> result;
+    std::istringstream stream(input);
+    std::string word;
+
+    // Split the string into words separated by spaces
+    while (std::getline(stream, word, delimiter)) {
+        result.push_back(word);
+    }
+
+    return result;
+}
+
 // Hook for derived classes to initialize resources
 void Day::Initialize() {
     // Default implementation: Do nothing.
