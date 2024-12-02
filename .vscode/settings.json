@@ -108,6 +108,12 @@
         "cfenv": "cpp",
         "cinttypes": "cpp",
         "expected": "cpp",
-        "__nullptr": "cpp"
+        "__nullptr": "cpp",
+        "regex": "cpp",
+        "__locale": "cpp",
+        "__string": "cpp",
+        "__split_buffer": "cpp",
+        "queue": "cpp",
+        "filesystem": "cpp"
     }
 }
