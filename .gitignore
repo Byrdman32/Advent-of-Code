@@ -1,5 +1,8 @@
 ### Project ###
 **build**/
+announce-puzzle.py
+used_messages.json
+reminder.sh
 
 ### C++ ###
 # Prerequisites
