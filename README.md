@@ -4,12 +4,12 @@ Welcome to my solutions repository for the [Advent of Code](https://adventofcode
 
 ## Setup Project Script
 
-The `setup.sh` script automates the creation of the project structure for Advent of Code. It manages yearly directories, daily challenges, and updates configuration files like `CMakeLists.txt` and `main.cpp`.
+The `setup.sh` script automates the creation of the project structure for Advent of Code. It manages yearly directories, daily challenges, and updates configuration files like `CMakeLists.txt` and `main.cpp`. Additionally, it provides an option to clean up the build directory.
 
 ### Usage
 
 ```bash
-./setup.sh --year <year> [--day <day>] [--set-year] [--set-day]
+./setup.sh --year <year> [--day <day>] [--set-year] [--set-day] [--delete-build]
 ```
 
 ### Arguments
@@ -18,6 +18,7 @@ The `setup.sh` script automates the creation of the project structure for Advent
 - **`--day <day>`**: Specifies the day to set up (optional, *the day should be between 1 and 25.*).
 - **`--set-year`**: Updates the year in `CMakeLists.txt`  (optional, *this is required if `--set-day` is used.*).
 - **`--set-day`**: Updates the day in `CMakeLists.txt` (optional).
+- **`--delete-build`**: Deletes the `build/` directory (optional).
 
 ### Features
 
@@ -37,6 +38,9 @@ The `setup.sh` script automates the creation of the project structure for Advent
    - Updates the project version in the format `YY.DD.00`.
    - Updates `YEAR_TO_BUILD_MODE` with the specified year if `--set-year` is used.
    - Updates `DAY_TO_BUILD_MODE` with the specified day if `--set-day` is used.
+
+4. **Build Directory Deletion**:
+   - If the `--delete-build` flag is specified, the script removes the `build/` directory and its contents.
 
 ### Examples
 
@@ -62,6 +66,13 @@ The `setup.sh` script automates the creation of the project structure for Advent
 - Updates the project version to `24.03.00` in `CMakeLists.txt`.
 - Updates `YEAR_TO_BUILD_MODE` to `2024`.
 - Updates `DAY_TO_BUILD_MODE` to `03`.
+
+#### Delete the Build Directory
+```bash
+./setup.sh --year 2024 --day 3 --set-year --set-day --delete-build
+```
+- Deletes the `build/` directory and its contents.
+- Can be combined with other flags to clean the project while setting up structures.
 
 ### Notes
 
