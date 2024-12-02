@@ -8,7 +8,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++23")
 
 ## Project Name and Version
-project(AoC VERSION 24.01.00 LANGUAGES CXX)
+project(AoC VERSION 24.02.00 LANGUAGES CXX)
 
 ####################################################################################################################
 ##                                                    Options                                                     ##
@@ -24,7 +24,7 @@ set(ENABLE_VERBOSE_TESTS OFF CACHE STRING "Enable verbose output for tests")
 set(YEAR_TO_BUILD_MODE "2024" CACHE STRING "Year of Event to Build")
 
 ## Day of Event to Build (or "all" to build all)
-set(DAY_TO_BUILD_MODE "01" CACHE STRING "Day of Event to Build (or 'all' to build all)")
+set(DAY_TO_BUILD_MODE "02" CACHE STRING "Day of Event to Build (or 'all' to build all)")
 
 ####################################################################################################################
 ##                                         Configuration Based on Options                                         ##

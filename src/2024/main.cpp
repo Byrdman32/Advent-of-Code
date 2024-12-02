@@ -6,7 +6,7 @@
 
 #include "../day.h"
 #include "day01/day01.h"
-// #include "day02/day02.h"
+#include "day02/day02.h"
 // #include "day03/day03.h"
 // #include "day04/day04.h"
 // #include "day05/day05.h"
@@ -35,7 +35,7 @@
 std::unique_ptr<Day> CreateDay(int day, const std::string& inputFilePath) {
     switch (day) {
         case 1: return std::make_unique<Day01>(inputFilePath);
-        // case 2: return std::make_unique<Day02>(inputFilePath);
+        case 2: return std::make_unique<Day02>(inputFilePath);
         // case 3: return std::make_unique<Day03>(inputFilePath);
         // case 4: return std::make_unique<Day04>(inputFilePath);
         // case 5: return std::make_unique<Day05>(inputFilePath);
@@ -78,7 +78,7 @@ void RunDay(int day, const std::string& inputPath) {
 
 int main() {
     // List of days to run
-    std::vector<int> daysToRun = {1};
+    std::vector<int> daysToRun = {1, 2};
 
     for (int day : daysToRun) {
         std::string inputFilePath = "day" + std::string(day < 10 ? "0" : "") + std::to_string(day) + ".txt";
