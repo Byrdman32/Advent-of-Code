@@ -121,13 +121,12 @@ std::string Day09::SolvePart2() {
         std::reverse(reversedDiffHistory.begin(), reversedDiffHistory.end());
 
         // Iterate over the reversed difference history
-        long long temp = 0;
         for (size_t j = 1; j < reversedDiffHistory.size(); j++) {
-            temp = reversedDiffHistory[j][0] - temp;
+            sum = reversedDiffHistory[j][0] - sum;
         }
 
         // Compute the previous number in the history sequence
-        result += firstNumber -temp;
+        result += firstNumber - sum;
     }
 
     // Return the result as a string
