@@ -89,7 +89,7 @@ void Day::AddTestForPart2(const std::vector<std::string>& input, const std::stri
 // Run all tests for Part 1
 void Day::RunTestsForPart1() {
     std::cout << "Running tests for Part 1...\n";
-    for (const auto& testCase : Part1Tests) {
+    for (const Day::TestCase& testCase : Part1Tests) {
         bool passed = RunSingleTest(testCase, [this]() { return SolvePart1(); });
         std::cout << (passed ? "PASSED" : "FAILED") << "\n";
     }
@@ -98,7 +98,7 @@ void Day::RunTestsForPart1() {
 // Run all tests for Part 2
 void Day::RunTestsForPart2() {
     std::cout << "Running tests for Part 2...\n";
-    for (const auto& testCase : Part2Tests) {
+    for (const Day::TestCase& testCase : Part2Tests) {
         bool passed = RunSingleTest(testCase, [this]() { return SolvePart2(); });
         std::cout << (passed ? "PASSED" : "FAILED") << "\n";
     }

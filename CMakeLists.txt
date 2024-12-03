@@ -8,7 +8,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++23")
 
 ## Project Name and Version
-project(AoC VERSION 23.09.00 LANGUAGES CXX)
+project(AoC VERSION 24.03.00 LANGUAGES CXX)
 
 ####################################################################################################################
 ##                                                    Options                                                     ##
@@ -21,10 +21,10 @@ set(BUILD_TESTS_MODE ON CACHE STRING "Enable Tests Mode")
 set(ENABLE_VERBOSE_TESTS OFF CACHE STRING "Enable verbose output for tests")
 
 ## Year of Event to Build
-set(YEAR_TO_BUILD_MODE "2023" CACHE STRING "Year of Event to Build")
+set(YEAR_TO_BUILD_MODE "2024" CACHE STRING "Year of Event to Build")
 
 ## Day of Event to Build (or "all" to build all)
-set(DAY_TO_BUILD_MODE "09" CACHE STRING "Day of Event to Build (or 'all' to build all)")
+set(DAY_TO_BUILD_MODE "03" CACHE STRING "Day of Event to Build (or 'all' to build all)")
 
 ####################################################################################################################
 ##                                         Configuration Based on Options                                         ##
@@ -81,6 +81,7 @@ target_link_libraries(GTest::GTest INTERFACE gtest_main)
 ## Find Yearly Data Inputs
 set(DATA_DIR "${CMAKE_SOURCE_DIR}/data/${YEAR_TO_BUILD_MODE}/")
 add_compile_definitions(DATA_DIR="${DATA_DIR}")
+add_compile_definitions(YEAR_BUILD="${YEAR_TO_BUILD_MODE}")
 
 ####################################################################################################################
 ##                                                Build Executable                                                ##
@@ -105,7 +106,7 @@ set(${EXE_NAME}_LIBRARIES Threads::Threads gcov)
 target_link_libraries(${EXE_NAME} PRIVATE ${${EXE_NAME}_LIBRARIES})
 
 ## Link Compile Definitions
-target_compile_definitions(${EXE_NAME} PRIVATE DATA_DIR="${DATA_DIR}")
+target_compile_definitions(${EXE_NAME} PRIVATE DATA_DIR="${DATA_DIR}" YEAR_BUILD="${YEAR_TO_BUILD_MODE}")
 
 ####################################################################################################################
 ##                                             Installation and Tests                                             ##

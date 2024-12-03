@@ -57,9 +57,9 @@ protected:
     template<typename Func>
     void MeasureExecutionTime(const std::string& partName, Func func) {
         try {
-            auto start = std::chrono::high_resolution_clock::now();
+            std::chrono::time_point<std::chrono::high_resolution_clock> start = std::chrono::high_resolution_clock::now();
             std::string result = func();
-            auto end = std::chrono::high_resolution_clock::now();
+            std::chrono::time_point<std::chrono::high_resolution_clock> end = std::chrono::high_resolution_clock::now();
             std::chrono::duration<double> elapsed = end - start;
             std::cout << partName << " Result: " << result << "\n";
             std::cout << partName << " Execution Time: " << elapsed.count() << " seconds\n";

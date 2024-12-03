@@ -68,7 +68,7 @@ std::unique_ptr<Day> CreateDay(int day, const std::string& inputFilePath) {
 
 void RunDay(int day, const std::string& inputPath) {
     try {
-        auto dayInstance = CreateDay(day, inputPath);
+        std::unique_ptr<Day> dayInstance = CreateDay(day, inputPath);
         std::cout << "=== Running Day " << day << " ===" << std::endl;
         dayInstance->RunAllParts();
     } catch (const std::exception& e) {
@@ -81,7 +81,7 @@ int main() {
     std::vector<int> daysToRun = {};
 
     for (int day : daysToRun) {
-        std::string inputFilePath = "day" + std::string(day < 10 ? "0" : "") + std::to_string(day) + ".txt";
+        std::string inputFilePath = std::string(YEAR_BUILD) + "-" + std::string(day < 10 ? "0" : "") + std::to_string(day) + ".txt";
         RunDay(day, inputFilePath);
     }
 
