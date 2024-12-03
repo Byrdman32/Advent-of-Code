@@ -16,7 +16,7 @@ jobs:
 
     strategy:
       matrix:
-        year: [2024]
+        year: [2023, 2024]
 
     steps:
       # Step 1: Checkout the code
